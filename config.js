@@ -2,7 +2,7 @@
 window.PYRRA_CFG = {
   // Tebex Headless "Public Token" (creator.tebex.io > Integrations > API Keys).
   // It is made to be public, so it is fine in this file. Empty = demo mode with sample data.
-  token: '',
+  token: '159bj-bc350b425d449ac56d00365ce58c310036eacd4f',
 
   // Discord invite link for the top bar and footer. Empty hides the Discord buttons.
   discord: '',
