@@ -48,8 +48,11 @@
 body.py-busy { cursor: progress; }
 body.py-busy .py-cart { pointer-events: none; opacity: .7; }
 .py-login { outline: none; }
+/* A player body render is tall and thin, so size it by height to stay inside the login box. */
+.py-login img.player { width: auto; height: 92px; right: 0; bottom: -4px; image-rendering: pixelated; }
 .py-login:focus-visible { box-shadow: 0 0 0 2px #ff7a12; border-radius: 8px; }
 
 @media (max-width: 720px) {
   .py-topbtn { font-size: 13px; gap: 6px; }
+  .py-login img.player { height: 64px; right: 2px; bottom: -2px; }
 }

@@ -106,14 +106,16 @@
       $('#loginTitle').textContent = user;
       $('#loginSub').textContent = 'Click to change player';
       $('#loginImg').src = 'https://mc-heads.net/body/' + encodeURIComponent(user.replace(/^\./, '')) + '/120';
+      $('#loginImg').classList.add('player');
     } else {
       top.innerHTML = `${ICON.user} <span>Login</span>`;
       $('#loginTitle').textContent = 'Log in';
       $('#loginSub').textContent = 'to start shopping';
       $('#loginImg').src = 'images/ranks/flame.png';
+      $('#loginImg').classList.remove('player');
     }
   }
-  $('#loginImg').addEventListener('error', function () { if (!this.src.endsWith('flame.png')) this.src = 'images/ranks/flame.png'; });
+  $('#loginImg').addEventListener('error', function () { if (!this.src.endsWith('flame.png')) { this.classList.remove('player'); this.src = 'images/ranks/flame.png'; } });
 
   function renderCart() {
     const list = $('#cartList');
