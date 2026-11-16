@@ -1,0 +1,55 @@
+/* Extra pieces for the live store (login, cart, toast) on top of theme/pyrra-theme.css. */
+[hidden] { display: none !important; }
+/* Keep the 3-column top bar lined up when the Discord link has no invite yet. */
+.py-top > [hidden] { display: block !important; visibility: hidden; }
+.py-topbtn {
+  justify-self: end; border: 0; background: none; cursor: pointer; color: var(--muted);
+  font: 700 15px/1 var(--body); display: inline-flex; gap: 8px; align-items: center; white-space: nowrap; position: relative; padding: 8px 4px;
+}
+.py-topbtn:hover { color: #fff; }
+.py-count {
+  font-style: normal; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px; display: inline-grid; place-items: center;
+  background: var(--btn); color: #fff; font: 800 12px/1 var(--body);
+}
+.py-loading { text-align: center; color: var(--muted); padding: 60px 0; }
+.py-center { text-align: center; }
+.py-note { color: var(--muted); font-size: 14px; }
+.py-note a { color: var(--gold); }
+.py-small { width: min(480px, 100%); }
+.py-mprice { color: var(--gold); font: 800 22px/1 var(--body); }
+
+.py-form { display: grid; gap: 12px; justify-items: center; margin-top: 8px; }
+.py-form img { width: 80px; height: 80px; object-fit: contain; image-rendering: pixelated; border-radius: 10px; }
+.py-form input {
+  width: 100%; height: 50px; border-radius: 8px; border: 2px solid #4a271c; background: #1a0d0a; color: #fff;
+  font: 700 17px/1 var(--body); text-align: center; outline: none;
+}
+.py-form input:focus { border-color: #ff7a12; }
+.py-form .py-cart { width: 100%; }
+
+.py-line { display: grid; grid-template-columns: 54px 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid #3d2119; }
+.py-line img { width: 54px; height: 54px; object-fit: contain; }
+.py-line b { display: block; font-weight: 800; }
+.py-line span { color: var(--muted); font-size: 14px; }
+.py-del { border: 0; background: #3d2119; color: #ffb4a6; width: 38px; height: 38px; border-radius: 8px; cursor: pointer; }
+.py-del:hover { background: #5a2c1e; color: #fff; }
+.py-total { display: flex; justify-content: space-between; align-items: center; margin: 16px 0; font: 800 18px/1 var(--body); }
+.py-total b { color: var(--gold); font-size: 22px; }
+#cart .py-cart { width: 100%; }
+.py-cart:disabled { opacity: .45; cursor: not-allowed; }
+
+.py-toast {
+  position: fixed; left: 50%; bottom: 24px; z-index: 50; transform: translate(-50%, 140%); opacity: 0;
+  background: #24130f; border: 1px solid #5a2c1e; border-left: 5px solid var(--btn); color: #fff; font-weight: 700;
+  padding: 12px 18px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, .5); transition: transform .25s ease, opacity .25s ease;
+  max-width: calc(100% - 32px);
+}
+.py-toast.show { transform: translate(-50%, 0); opacity: 1; }
+body.py-busy { cursor: progress; }
+body.py-busy .py-cart { pointer-events: none; opacity: .7; }
+.py-login { outline: none; }
+.py-login:focus-visible { box-shadow: 0 0 0 2px #ff7a12; border-radius: 8px; }
+
+@media (max-width: 720px) {
+  .py-topbtn { font-size: 13px; gap: 6px; }
+}
